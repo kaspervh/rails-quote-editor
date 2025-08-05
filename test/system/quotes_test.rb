@@ -6,21 +6,21 @@ class QuotesTest < ApplicationSystemTestCase
   end
 
   test "Creating quote " do 
-    visit quote_path
+    visit quotes_path
     assert_selector 'h1', text: 'Quote'
 
     click_on 'new quote'
     assert_selector 'h1', text: 'New Quote'
 
     fill_in 'Name', with: 'this is a test'
-    click_on 'create quote'
+    click_on 'Create quote'
 
-    assert_selector 'h1', text: 'quotes'
+    assert_selector 'h1', text: 'Quotes'
     assert_text 'this is a test'
   end  
 
   test "showing a quote" do 
-    visit quote_path
+    visit quotes_path
     click_link @quote.name
     assert_selector 'h1', text: @quote.name
 
@@ -30,11 +30,11 @@ class QuotesTest < ApplicationSystemTestCase
     visit quotes_path
     assert_selector 'h1', text: "Quotes"
 
-    click_on 'edit'
+    first('.quote').click_link('edit')
     assert_selector 'h1', text: 'edit quote'
 
     fill_in 'Name', with: 'updated quote'
-    click_on 'update quote'
+    click_on 'Update quote'
 
     assert_selector 'h1', text: 'Quotes'
     assert_text 'updated quote'
