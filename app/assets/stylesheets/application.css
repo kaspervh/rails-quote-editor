@@ -1,10 +1,59 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+body{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Schoolbell', arial, serif; 
+}
+
+a{
+  font-size: 2em;
+  color: black
+}
+
+.container{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: solid black 2px;
+}
+
+.header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: solid black;
+}
+
+.btn{
+  background-color: white; /* Green */
+  border: 2px solid black;
+  color: black;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.quote{
+  display:flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 95%;
+  border: 2px solid black;
+  margin: 3px; 
+  padding: 5px; 
+}
+
+.quote_actions{
+  display:flex;
+  justify-content: space-between;
+  width:20%;
+
+}
