@@ -11,6 +11,10 @@ a{
   color: black
 }
 
+turbo-frame{
+  width: 100%;
+}
+
 .container{
   width: 50%;
   display: flex;
