@@ -12,11 +12,11 @@ class QuotesTest < ApplicationSystemTestCase
     click_on 'new quote'
     assert_selector 'h1', text: 'New Quote'
 
-    fill_in 'Name', with: 'this is a test'
+    fill_in 'Name', with: 'Capybara quote'
     click_on 'Create quote'
 
     assert_selector 'h1', text: 'Quotes'
-    assert_text 'this is a test'
+    assert_text 'tCapybara quote'
   end  
 
   test "showing a quote" do 
