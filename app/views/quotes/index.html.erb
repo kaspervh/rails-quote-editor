@@ -1,12 +1,12 @@
 <main class="container">
-  <%= turbo_frame_tag 'first_turbo_frame' do%>
   <div class="header">
     <h1>Quotes</h1>
-    <%= link_to 'new quote', new_quote_path, data: {turbo_frame: 'second_frame'}, class: 'btn btn-primary'%>
+    <%= link_to "New quote", new_quote_path, class: "btn btn--primary", data: { turbo_frame: dom_id(Quote.new) } %>
   </div>
-  <%end%>
-  <%= turbo_frame_tag 'second_frame' %>
 
-
-  <%= render @quotes %>
+  <%= turbo_frame_tag Quote.new %>
+  <div id="quotes">
+    <%= render @quotes %>
+  </div>
+  
 </main>

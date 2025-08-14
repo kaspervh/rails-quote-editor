@@ -2,7 +2,7 @@
   <%= link_to 'back to quotes', quotes_path %>
   <div class="header">
     <h1>New Quote</h1>
-    <%= turbo_frame_tag 'second_frame' do %> 
+    <%= turbo_frame_tag @quote do %> 
       <%= render 'form', quote: @quote %> 
     <%end%>
   </div>
