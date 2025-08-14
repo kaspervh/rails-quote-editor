@@ -11,6 +11,14 @@ a{
   color: black
 }
 
+turbo-frame{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#quotes{ width: 100%}
+
 .container{
   width: 50%;
   display: flex;
