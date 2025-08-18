@@ -7,7 +7,11 @@
  
   <%=  f.input :name %>
   <br>
-  <%= f.submit  class: 'btn btn--secondary' %>
+  <div id="buttons">
+    <%= button_to 'cancel',  quotes_path, class: 'btn btn--primary' %>  
+    <%= f.submit  class: 'btn btn--secondary' %>
+  </div>
+  
   
 <%end%>
   
