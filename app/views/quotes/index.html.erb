@@ -1,4 +1,6 @@
+
 <main class="container">
+  <%= turbo_stream_from 'quotes' %>
   <div class="header">
     <h1>Quotes</h1>
     <%= link_to "New quote", new_quote_path, class: "btn btn--primary", data: { turbo_frame: dom_id(Quote.new) } %>
@@ -8,5 +10,5 @@
   <div id="quotes">
     <%= render @quotes %>
   </div>
-  
-</main>
+
+</main> 
