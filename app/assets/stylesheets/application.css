@@ -3,6 +3,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   font-family: 'Schoolbell', arial, serif; 
 }
 
@@ -64,4 +65,19 @@ turbo-frame{
   justify-content: space-between;
   width:20%;
 
+}
+
+.navbar{
+  width: 100%;
+  position: absolute;
+  z-index: 3;
+  top:0px;
+  padding: 10px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar__right{
+  margin-left: 95%;
 }
