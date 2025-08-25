@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_20_111834) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_25_143258) do
   create_table "companies", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -33,12 +33,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_20_111834) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id", null: false
+    t.integer "company_id", null: false
+    t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["user_id"], name: "index_users_on_user_id"
   end
 
   add_foreign_key "quotes", "companies"
-  add_foreign_key "users", "users"
+  add_foreign_key "users", "companies"
 end
