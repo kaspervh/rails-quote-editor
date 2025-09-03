@@ -82,15 +82,6 @@ turbo-frame{
   margin-left: 95%;
 }
 
-@keyframes appear-then-fade {
-  0%, 100% {
-    opacity:0
-  }
-  5%, 60% {
-    opacity:1
-  }
-}
-
 .flash{
   position: fixed;
   top: 5rem;
@@ -108,7 +99,7 @@ turbo-frame{
   padding: 0 var(--space-m);
 }
 
-.flash__message {
+.flash_message {
     font-size: var(--font-size-s);
     color: var(--color-white);
     padding: var(--space-xs) var(--space-m);
@@ -117,3 +108,11 @@ turbo-frame{
     border-radius: 999px; 
   }
 
+@keyframes appear-then-fade {
+  0%, 100% {
+    opacity:0
+  }
+  5%, 60% {
+    opacity:1
+  }
+}
