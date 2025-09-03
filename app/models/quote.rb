@@ -3,9 +3,9 @@ class Quote < ApplicationRecord
   validates :name, presence: :true
 
   after_create_commit -> { broadcast_prepend_to [self.company, "quotes"] }
-  after_update_commit -> { broadcast_replace_to "quotes" }
-  after_destroy_commit -> { broadcast_destroy_to "quotes" }
-
+  after_update_commit -> { broadcast_replace_to [self.company, "quotes"] }
+  after_destroy_commit -> { broadcast_remove_to [self.company,"quotes"] }
+ 
 
 
   scope :ordered, -> {order(created_at: :desc)}

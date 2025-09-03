@@ -2,3 +2,7 @@
 import { application } from "controllers/application"
 import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading"
 eagerLoadControllersFrom("controllers", application)
+
+
+// import RemovalsController from "./removals_controller.js"
+// application.register("removals", RemovalsController)
