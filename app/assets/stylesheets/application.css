@@ -116,3 +116,20 @@ turbo-frame{
     opacity:1
   }
 }
+
+.empty-state{
+  width: 100%;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.only-child{
+  display: none;
+}
+
+.only-child:only-child{
+  display: flex;
+}
