@@ -5,5 +5,12 @@
     <h1>
       <%= @quote.name %>
     </h1>
+    <%= link_to 'New Date', new_quote_line_item_date_path(@quote), class: 'btn' %>
   </div>
+
+  <div>
+    <%= render @quote.line_item_dates %>
+  </div>
+
+
 </main>

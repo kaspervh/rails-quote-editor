@@ -1,8 +1,6 @@
 
-<%= simple_form_for(@line_item_date) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
+<%= simple_form_for [quote, line_item_date], html: {class: 'quote-form'} do |f| %>
+  
   <div class="form-inputs">
     <%= f.association :quote %>
     <%= f.input :date %>

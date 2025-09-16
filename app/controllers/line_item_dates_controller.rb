@@ -12,6 +12,7 @@ class LineItemDatesController < ApplicationController
 
   # GET /line_item_dates/new
   def new
+    @quote = Quote.find_by(id: params[:quote_id])
     @line_item_date = LineItemDate.new
   end
 

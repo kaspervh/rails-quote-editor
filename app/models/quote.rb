@@ -1,5 +1,6 @@
 class Quote < ApplicationRecord
   belongs_to :company
+  has_many :line_item_dates
   validates :name, presence: :true
 
   after_create_commit -> { broadcast_prepend_to [self.company, "quotes"] }
