@@ -30,6 +30,7 @@ class QuotesController < ApplicationController
       respond_to do |format|
         format.html {redirect_to quotes_path, notice: 'quote have been updated'}
         format.turbo_stream {flash.now[:notice] = 'quote have been updated'}
+      end
 
     else
       render :edit
