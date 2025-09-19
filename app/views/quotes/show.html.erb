@@ -5,12 +5,15 @@
     <h1>
       <%= @quote.name %>
     </h1>
-    <%= link_to 'New Date', new_quote_line_item_date_path(@quote), class: 'btn' %>
+    <%= link_to 'New Date', new_quote_line_item_date_path(@quote), class: 'btn', data: {turbo_frame: dom_id(LineItemDate.new)}%>
   </div>
+  <%= turbo_frame_tag LineItemDate.new %>
 
   <div>
-    <%= render @quote.line_item_dates %>
+    <% @quote.line_item_dates.each do |item_date| %>
+      <%= render 'line_item_dates/line_item_date', line_item_date: item_date %>
+    <% end %>
   </div>
-
+  
 
 </main>
