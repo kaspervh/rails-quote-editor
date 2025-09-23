@@ -1,5 +1,6 @@
 class LineItemDatesController < ApplicationController
   before_action :set_line_item_date, only: %i[ show edit update destroy ]
+  before_action :set_current_quote
 
   # GET /line_item_dates or /line_item_dates.json
   def index
@@ -26,7 +27,7 @@ class LineItemDatesController < ApplicationController
 
     respond_to do |format|
       if @line_item_date.save
-        format.html { redirect_to @line_item_date, notice: "Line item date was successfully created." }
+        format.html { redirect_to quote_path(@quote), notice: "Line item date was successfully created." }
         format.json { render :show, status: :created, location: @line_item_date }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,6 +42,7 @@ class LineItemDatesController < ApplicationController
       if @line_item_date.update(line_item_date_params)
         format.html { redirect_to @line_item_date, notice: "Line item date was successfully updated." }
         format.json { render :show, status: :ok, location: @line_item_date }
+        format.turbo_stream {flash.now[:notice] = 'Date created'}
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @line_item_date.errors, status: :unprocessable_entity }
@@ -62,6 +64,10 @@ class LineItemDatesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_line_item_date
       @line_item_date = LineItemDate.find(params.expect(:id))
+    end
+
+    def set_current_quote
+      @quote = Quote.find(params[:quote_id])
     end
 
     # Only allow a list of trusted parameters through.

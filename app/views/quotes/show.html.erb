@@ -1,6 +1,7 @@
 <main class="container">
+  <%= turbo_stream_from @quote, 'line_item_dates' %>
   <%=link_to "back to quotes", quotes_path %>
-
+  
   <div class="header">
     <h1>
       <%= @quote.name %>
@@ -10,9 +11,9 @@
   <%= turbo_frame_tag LineItemDate.new %>
 
   <div>
-    <% @quote.line_item_dates.each do |item_date| %>
-      <%= render 'line_item_dates/line_item_date', line_item_date: item_date %>
-    <% end %>
+
+    <%= render 'line_item_dates/line_item_dates', line_item_dates: @quote.line_item_dates %>
+
   </div>
   
 
