@@ -1,10 +1,19 @@
-<div class="container" id="line_item_dates">
+
+<div id="line_item_dates">
 
   <% line_item_dates.each do |date|%>
-    <p id="dom_id<%= date.id %>">
-      <Strong>Date</Strong>
-      <%= date.date %>
-    </p>
+    <div class="quote">
+      <div>
+        <p id="dom_id<%= date.id %>">
+          <Strong>Date</Strong>
+          <%= date.date %>
+        </p>
+      </div>
+      <div class="quote_actions">
+        <%= button_to 'Delete', quote_line_item_date_path(date), method: :delete, class: 'btn' %>
+        <%= link_to 'Edit', edit_quote_line_item_date_path(date), class: 'btn' %>
+      </div>
+    </div>
   <% end %>
 
 </div>
